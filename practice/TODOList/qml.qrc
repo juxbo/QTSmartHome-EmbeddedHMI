@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Todo.qml</file>
+        <file>TodoForm.ui.qml</file>
+    </qresource>
+</RCC>
