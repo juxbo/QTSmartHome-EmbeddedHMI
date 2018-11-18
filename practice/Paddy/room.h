@@ -20,6 +20,7 @@ public:
     QString name() const;
 
     Q_INVOKABLE void addLight();
+    Q_INVOKABLE void toggleAllLights();
 
 signals:
     void nameChanged();

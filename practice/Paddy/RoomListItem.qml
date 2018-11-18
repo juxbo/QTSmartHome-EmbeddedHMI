@@ -1,4 +1,6 @@
-import QtQuick 2.0
+import QtQuick 2.7
+import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.4
 
 import Room 1.0;
 
@@ -13,12 +15,20 @@ Item {
     Rectangle {
         width: parent.width
         height: 100
-
-        border.width: 2
+        border.width: 1
         border.color: "black"
-        Row {
+        RowLayout {
+            width: parent.width - 10
+            height: parent.height
+            //TODO: somehow add left padding
+
             Text{
                 text: base.room.name
+                Layout.fillWidth: true
+            }
+            Button {
+                text: "On / Off"
+                onClicked: room.toggleAllLights()
             }
         }
     }

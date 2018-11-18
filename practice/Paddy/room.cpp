@@ -22,6 +22,13 @@ void Room::addLight()
     lights.push_back(new Light{this});
 }
 
+void Room::toggleAllLights()
+{
+    qDebug() << "Toggled all lights";
+
+    // TODO: Implement all light toggle
+}
+
 QString Room::name() const
 {
     return m_name;
