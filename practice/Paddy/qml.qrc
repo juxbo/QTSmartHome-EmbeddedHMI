@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>RoomListItem.qml</file>
+        <file>NewRoom.qml</file>
+        <file>HouseHeader.qml</file>
+        <file>House.qml</file>
+    </qresource>
+</RCC>
