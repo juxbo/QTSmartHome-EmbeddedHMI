@@ -5,5 +5,7 @@
         <file>NewRoom.qml</file>
         <file>HouseHeader.qml</file>
         <file>House.qml</file>
+        <file>Room.qml</file>
+        <file>RoomHeader.qml</file>
     </qresource>
 </RCC>

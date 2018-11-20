@@ -20,13 +20,14 @@ public:
     QString name() const;
 
     Q_INVOKABLE void addLight();
+    Q_INVOKABLE bool lightsOn();
 
 signals:
     void nameChanged();
 
 private:
     QString m_name;
-    QVector<Light*> lights;
+    QVector<Light*> m_lights;
 };
 
 #endif // ROOM_H

@@ -10,7 +10,7 @@ Room::Room()
 Room::Room(const QString &name, QObject *parent)
     : QObject{parent}
     , m_name{name}
-    , lights{}
+    , m_lights{}
 {}
 
 Room::~Room()
@@ -19,7 +19,17 @@ Room::~Room()
 void Room::addLight()
 {
     qDebug() << "New Light";
-    lights.push_back(new Light{this});
+    m_lights.push_back(new Light{this});
+}
+
+bool Room::lightsOn()
+{
+    for(int i = 0; i < m_lights.size(); ++i){
+        if(m_lights.at(i)->isActive()){
+            return true;
+        }
+    }
+    return false;
 }
 
 QString Room::name() const

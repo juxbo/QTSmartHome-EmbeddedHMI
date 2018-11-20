@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    qmlRegisterType<Room>("Room", 1, 0, "Room");
+    qmlRegisterType<Room>("RoomClass", 1, 0, "RoomClass");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("house", &house);

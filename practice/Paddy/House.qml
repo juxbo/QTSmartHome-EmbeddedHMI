@@ -1,6 +1,11 @@
 import QtQuick 2.0
 
+import RoomClass 1.0
+
 Item {
+    id: base
+
+    signal selectRoom(RoomClass room)
 
     anchors.fill: parent;
     NewRoom{
@@ -17,7 +22,6 @@ Item {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
-        height: 100
     }
 
     ListView{
@@ -28,16 +32,14 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
 
+        spacing: 10
+
         delegate: RoomListItem {
             room: model.modelData
-        }
 
-//        Connections {
-//            target: house
-//            onRoomsChanged:{
-//                console.log("Rooms changed")
-//                console.log(house.modelRooms)
-//            }
-//        }
+            onSelectRoom: {
+                base.selectRoom(room)
+            }
+        }
     }
 }
