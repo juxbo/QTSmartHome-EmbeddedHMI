@@ -24,22 +24,12 @@ Item {
         anchors.right: parent.right
     }
 
-    ListView{
-        model: house.modelRooms
+    RoomList{
+        id: houseRoomList
 
-        anchors.top: houseHeader.bottom
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
+        anchors.top: houseHeader.top
 
-        spacing: 10
+        anchors.bottom: base.bottom
 
-        delegate: RoomListItem {
-            room: model.modelData
-
-            onSelectRoom: {
-                base.selectRoom(room)
-            }
-        }
     }
 }
