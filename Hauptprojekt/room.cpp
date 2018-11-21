@@ -32,13 +32,6 @@ bool Room::lightsOn()
     return false;
 }
 
-void Room::toggleAllLights()
-{
-    qDebug() << "Toggled all lights";
-
-    // TODO: Implement all light toggle
-}
-
 QString Room::name() const
 {
     return m_name;

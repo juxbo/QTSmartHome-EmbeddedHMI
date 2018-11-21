@@ -1,9 +1,14 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.4
 
+import RoomClass 1.0
+
 Item {
     id: base
-    signal newRoom();
+    signal newLight();
+    signal back();
+
+    property RoomClass room;
 
     width: mainWindow.width
     height: rectangle.height
@@ -11,12 +16,12 @@ Item {
         id: rectangle
 
         width: mainWindow.width
-        height: newRoomButton.height + newRoomButton.anchors.topMargin + newRoomButton.anchors.bottomMargin
+        height: newLightButton.height + newLightButton.anchors.topMargin + newLightButton.anchors.bottomMargin
 
         color: "white"
 
         RoundButton{
-            id: closeButton
+            id: backButton
 
             text: "<-"
             font.pixelSize: 22
@@ -27,16 +32,16 @@ Item {
             anchors.top: parent.top
             anchors.left: parent.left
 
-            onClicked: Qt.quit();
+            onClicked: base.back()
         }
 
         Text{
             anchors.centerIn: parent;
-            text: qsTr("Welcome to your House")
+            text: base.room ? base.room.name : qsTr("Placeholder")
         }
 
         RoundButton{
-            id: newRoomButton
+            id: newLightButton
 
             text: "+"
             font.pixelSize: 22
@@ -46,7 +51,7 @@ Item {
             anchors.rightMargin: 5
             anchors.top: parent.top
             anchors.right: parent.right
-            onClicked: base.newRoom()
+            onClicked: base.room.addLight()
         }
     }
 }
