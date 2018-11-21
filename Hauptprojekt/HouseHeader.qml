@@ -3,18 +3,26 @@ import QtQuick.Controls 2.4
 
 Item {
     id: base
-    signal newRoom();
+    signal newRoom
 
     width: mainWindow.width
     height: rectangle.height
-    Rectangle{
+
+    HamburgerMenu {
+        id: drawer
+    }
+
+    Rectangle {
         id: rectangle
 
         width: mainWindow.width
-        height: newRoomButton.height + newRoomButton.anchors.topMargin + newRoomButton.anchors.bottomMargin
+        height: newRoomButton.height + newRoomButton.anchors.topMargin
+                + newRoomButton.anchors.bottomMargin
 
         color: "white"
 
+
+        /*
         RoundButton{
             id: closeButton
 
@@ -28,14 +36,22 @@ Item {
             anchors.left: parent.left
 
             onClicked: Qt.quit();
+        }*/
+        RoundButton {
+            id: hamburgerButton
+            text: "\u2630"
+            font.pixelSize: Qt.application.font.pixelSize * 1.6
+            onClicked: {
+                drawer.open()
+            }
         }
 
-        Text{
-            anchors.centerIn: parent;
+        Text {
+            anchors.centerIn: parent
             text: qsTr("Welcome to your House")
         }
 
-        RoundButton{
+        RoundButton {
             id: newRoomButton
 
             text: "+"
