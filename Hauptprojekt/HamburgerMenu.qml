@@ -12,39 +12,45 @@ Drawer {
         anchors.fill: parent
 
         Label {
-            text: "Content goes here!"
-            anchors.verticalCenter: parent
+            text: "Smart Homie"
+            font.pixelSize: 14
+            font.bold: true
+            padding: 10
         }
-        //TODO: Create an own component for this
+        // Horizontal line
+        Rectangle {
+            border.width: 1
+            height: 2
+            width: parent.width
+            anchors.margins: 20
+            border.color: "gray"
+        }
+        //TODO: Create an own component for this?
         ItemDelegate {
             text: qsTr("Add Room")
             width: parent.width
             onClicked: {
-                console.log(height)
-                stackView.push("Page2Form.ui.qml")
+                console.log("Add room")
+                base.newRoom()
                 drawer.close()
             }
         }
         ItemDelegate {
             width: parent.width
-            text: qsTr("Add Room")
+            text: qsTr("Dark mode")
+            // TODO: Send clicked event to the toggle button
+            onClicked: darkModeBtn
             OnOffToggleButton {
-                anchors.verticalCenter: parent
-                // value: base.room.lightsOn()
+                id: darkModeBtn
             }
         }
-        /*
-            onClicked: {
-                stackView.push("Page 1.ui.qml")
-                drawer.close()
-            }*/
 
         ItemDelegate {
             id: goToSettings
             text: qsTr("Settings")
             width: parent.width
             onClicked: {
-                stackView.push("Page 1.ui.qml")
+                console.log("Go to settings")
                 drawer.close()
             }
         }

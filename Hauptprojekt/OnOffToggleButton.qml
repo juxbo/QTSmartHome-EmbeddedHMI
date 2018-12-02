@@ -6,6 +6,7 @@ Item {
     //id: onOffBtn
     width: parent.width / 4
     height: parent.height
+    anchors.right: parent.right
     Slider {
         id: slider
 
