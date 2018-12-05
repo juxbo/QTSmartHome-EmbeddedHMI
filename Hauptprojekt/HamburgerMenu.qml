@@ -35,7 +35,24 @@ Drawer {
                 drawer.close()
             }
         }
+        Label {
+            anchors.topMargin: 50
+            text: "Settings"
+            font.pixelSize: 14
+            //font.bold: true
+            padding: 10
+            topPadding: 25
+        }
+        // Horizontal line
+        Rectangle {
+            border.width: 1
+            height: 2
+            width: parent.width
+            anchors.margins: 20
+            border.color: "gray"
+        }
         ItemDelegate {
+            id: darkModeDelegate
             width: parent.width
             text: qsTr("Dark mode")
             // Send clicked event to the toggle button
@@ -44,14 +61,19 @@ Drawer {
                 id: darkModeBtn
             }
         }
-
-        ItemDelegate {
-            id: goToSettings
-            text: qsTr("Settings")
+        ComboBox {
+            id: langCB
+            currentIndex: 0
+            model: ["English", "Deutsch"]
             width: parent.width
-            onClicked: {
-                console.log("Go to settings")
-                drawer.close()
+            background: parent.background
+            onCurrentIndexChanged: console.log("Changed lang")
+            contentItem: Text {
+                text: langCB.displayText
+                font: darkModeDelegate.font
+                padding: darkModeDelegate.padding
+                // TODO: Get the color of the darkModeDelegate text instead
+                color: "#393939"
             }
         }
     }
