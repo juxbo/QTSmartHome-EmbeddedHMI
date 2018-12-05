@@ -8,9 +8,12 @@ Item {
     //id: onOffBtn
 
     width: parent.width / 4
-    height: parent.height > switchi.height ? parent.height : switchi.height
+    height: switchi.height
     anchors.right: parent.right
     anchors.rightMargin: 10
+    anchors.verticalCenter: parent.verticalCenter
+
+    // Toggle when clicking the corresponding hamburger item delegate
     onClickToggle: switchi.toggle()
 
     Switch {

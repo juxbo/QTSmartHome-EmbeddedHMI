@@ -28,6 +28,7 @@ Item {
 
         width: parent.width
         height: name.height > darkModeBtn.height ? name.height : darkModeBtn.height
+        //height: darkModeBtn.height
 
         border.width: 1
         border.color: "transparent"
