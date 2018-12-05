@@ -5,7 +5,7 @@ import RoomClass 1.0
 Item {
     id: base
 
-    signal selectRoom(RoomClass room)
+    signal roomSelected(RoomClass room)
 
     anchors.fill: parent;
     NewRoom{
@@ -17,7 +17,7 @@ Item {
 
     HouseHeader{
         id: houseHeader
-        onNewRoom: newRoomPopup.visible = true;
+        onNewRoom: newRoomPopup.visible = true
 
         anchors.top: parent.top
         anchors.left: parent.left
@@ -27,9 +27,11 @@ Item {
     RoomList{
         id: houseRoomList
 
-        anchors.top: houseHeader.top
-
+        anchors.top: houseHeader.bottom
         anchors.bottom: base.bottom
 
+        onSelectRoom: {
+            roomSelected(room)
+        }
     }
 }

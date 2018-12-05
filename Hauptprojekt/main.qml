@@ -15,7 +15,7 @@ Window {
         id: housePage
 
         visible: true
-        onSelectRoom: {
+        onRoomSelected: {
             visible = false;
             roomPage.visible = true;
             roomPage.room = room;
