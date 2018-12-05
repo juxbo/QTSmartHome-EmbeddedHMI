@@ -9,9 +9,26 @@ Item {
     signal roomBack()
     anchors.fill: parent;
 
+
+    OpenGlEs {
+        id: opengles
+        anchors.top: base.top
+        anchors.bottom: base.verticalCenter
+
+        room: base.room
+
+    }
+
     RoomHeader{
         room: base.room
         onBack: roomBack()
+
+        anchors.top: base.top
     }
 
+    RoomSettings {
+        anchors.top: base.verticalCenter
+        anchors.bottom: base.bottom
+        width: base.width
+    }
 }

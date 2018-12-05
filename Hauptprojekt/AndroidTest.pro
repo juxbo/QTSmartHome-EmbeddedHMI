@@ -1,4 +1,4 @@
-QT += quick
+QT += quick 3drender
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -16,7 +16,8 @@ SOURCES += \
         main.cpp \
     room.cpp \
     light.cpp \
-    house.cpp
+    house.cpp \
+    roommodel.cpp
 
 RESOURCES += qml.qrc
 
@@ -34,4 +35,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     room.h \
     light.h \
-    house.h
+    house.h \
+    roommodel.h

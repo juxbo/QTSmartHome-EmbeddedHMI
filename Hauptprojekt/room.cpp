@@ -11,7 +11,9 @@ Room::Room(const QString &name, QObject *parent)
     : QObject{parent}
     , m_name{name}
     , m_lights{}
-{}
+    , m_model{}
+{
+}
 
 Room::~Room()
 {}
@@ -30,6 +32,11 @@ bool Room::lightsOn()
         }
     }
     return false;
+}
+
+RoomModel *Room::model()
+{
+    return &m_model;
 }
 
 QString Room::name() const
