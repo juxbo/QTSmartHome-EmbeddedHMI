@@ -54,21 +54,8 @@ Item {
         Text {
             anchors.centerIn: parent
             text: qsTr("Welcome to your House")
+            font.pixelSize: 18
         }
-
-//        RoundButton {
-//            id: newRoomButton
-
-//            text: "+"
-//            font.pixelSize: 22
-
-////            anchors.topMargin: 5
-////            anchors.bottomMargin: 5
-////            anchors.rightMargin: 5
-////            anchors.top: parent.top
-////            anchors.right: parent.right
-//            onClicked: base.newRoom()
-//        }
 
     }
 }

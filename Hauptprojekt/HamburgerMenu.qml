@@ -12,8 +12,8 @@ Drawer {
         anchors.fill: parent
 
         Label {
-            text: "Smart Homie"
-            font.pixelSize: 14
+            text: qsTr("Smart Homie")
+            font.pixelSize: 16
             font.bold: true
             padding: 10
         }
@@ -37,9 +37,8 @@ Drawer {
         }
         Label {
             anchors.topMargin: 50
-            text: "Settings"
-            font.pixelSize: 14
-            //font.bold: true
+            text: qsTr("Settings")
+            font.pixelSize: 16
             padding: 10
             topPadding: 25
         }

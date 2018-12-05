@@ -8,7 +8,7 @@ Item {
     //id: onOffBtn
 
     width: parent.width / 4
-    height: parent.height
+    height: parent.height > switchi.height ? parent.height : switchi.height
     anchors.right: parent.right
     anchors.rightMargin: 10
     onClickToggle: switchi.toggle()
