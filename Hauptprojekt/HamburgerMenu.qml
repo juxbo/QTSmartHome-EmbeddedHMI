@@ -38,8 +38,8 @@ Drawer {
         ItemDelegate {
             width: parent.width
             text: qsTr("Dark mode")
-            // TODO: Send clicked event to the toggle button
-            onClicked: darkModeBtn
+            // Send clicked event to the toggle button
+            onClicked: darkModeBtn.clickToggle()
             OnOffToggleButton {
                 id: darkModeBtn
             }
