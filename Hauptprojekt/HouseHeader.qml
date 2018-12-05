@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
+import QtGraphicalEffects 1.0
 
 Item {
     id: base
@@ -49,6 +50,7 @@ Item {
                 color: "transparent"
             }
             padding: 10
+            anchors.bottomMargin: 5
         }
 
         Text {
@@ -57,5 +59,14 @@ Item {
             font.pixelSize: 18
         }
 
+    }
+    DropShadow {
+        anchors.fill: rectangle
+        horizontalOffset: 0
+        verticalOffset: 2
+        radius: 5.0
+        samples: 17
+        color: "#80000000"
+        source: rectangle
     }
 }
