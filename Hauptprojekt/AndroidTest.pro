@@ -16,8 +16,7 @@ SOURCES += \
         main.cpp \
     room.cpp \
     light.cpp \
-    house.cpp \
-    roommodel.cpp
+    house.cpp
 
 RESOURCES += qml.qrc \
     model.qrc \
@@ -38,7 +37,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     room.h \
     light.h \
-    house.h \
-    roommodel.h
+    house.h
 
 DISTFILES +=

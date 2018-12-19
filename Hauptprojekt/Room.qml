@@ -10,14 +10,12 @@ Item {
     anchors.fill: parent;
 
 
-    OpenGlEs {
-        id: opengles
-        anchors.top: base.top
-        anchors.bottom: base.verticalCenter
+//    OpenGlEs {
+//        id: opengles
+//        anchors.top: base.top
+//        anchors.bottom: base.verticalCenter
 
-        //room: base.room
-
-    }
+//    }
 
     RoomHeader{
         room: base.room

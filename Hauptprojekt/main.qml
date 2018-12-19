@@ -31,5 +31,4 @@ Window {
             housePage.visible = true;
         }
     }
-
 }

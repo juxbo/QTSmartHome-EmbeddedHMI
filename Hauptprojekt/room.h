@@ -6,14 +6,12 @@
 #include <QVector>
 
 #include "light.h"
-#include "roommodel.h"
 
 class Room : public QObject
 {
     Q_OBJECT
 
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
-    Q_PROPERTY(RoomModel* model READ model CONSTANT)
 public:
     Room();
     Room(const QString &name, QObject *parent = nullptr);
@@ -24,15 +22,12 @@ public:
     Q_INVOKABLE void addLight();
     Q_INVOKABLE bool lightsOn();
 
-    RoomModel* model();
-
 signals:
     void nameChanged();
 
 private:
     QString m_name;
     QVector<Light*> m_lights;
-    RoomModel m_model;
 };
 
 #endif // ROOM_H
