@@ -1,4 +1,4 @@
-QT += quick
+QT += quick 3drender
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -18,7 +18,10 @@ SOURCES += \
     light.cpp \
     house.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    model.qrc \
+    textures.qrc \
+    shaders.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -35,3 +38,5 @@ HEADERS += \
     room.h \
     light.h \
     house.h
+
+DISTFILES +=

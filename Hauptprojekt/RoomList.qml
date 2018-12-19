@@ -1,9 +1,17 @@
 import QtQuick 2.0
+import RoomClass 1.0
 
 Item {
+    id: base
+    width: parent.width
+
+    signal selectRoom(RoomClass room)
 
     RoomListHeader{
         id: roomListHeader
+
+        anchors.top: base.top
+        width: base.width
 
     }
 
@@ -11,9 +19,9 @@ Item {
         model: house.modelRooms
 
         anchors.top: roomListHeader.bottom
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
+        anchors.bottom: base.bottom
+        anchors.left: base.left
+        anchors.right: base.right
 
         spacing: 10
 

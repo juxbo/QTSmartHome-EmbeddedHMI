@@ -11,29 +11,24 @@ Window {
 
     color: "lightblue"
 
-//    MainScreen{
-//        id: housePage
+    MainScreen{
+        id: housePage
 
-//        visible: true
-//        onSelectRoom: {
-//            visible = false;
-//            roomPage.visible = true;
-//            roomPage.room = room;
-//        }
-//    }
-
-//    Room{
-//        id: roomPage
-
-//        visible: false;
-//        onRoomBack: {
-//            visible = false;
-//            housePage.visible = true;
-//        }
-//    }
-
-    RoomSettings {
-        anchors.fill: parent
+        visible: true
+        onRoomSelected: {
+            visible = false;
+            roomPage.visible = true;
+            roomPage.room = room;
+        }
     }
 
+    Room{
+        id: roomPage
+
+        visible: false;
+        onRoomBack: {
+            visible = false;
+            housePage.visible = true;
+        }
+    }
 }

@@ -2,11 +2,8 @@ import QtQuick 2.0
 import QtQuick.Controls 2.4
 import QtQuick.Dialogs 1.1
 import RoomClass 1.0;
-Item {
-    anchors.fill: parent
 
-    width: 320
-    height: 240
+Item {
     SystemPalette { id: palette }
     clip: true
 
@@ -18,8 +15,6 @@ Item {
         color: "green"
         onAccepted: { console.log("Accepted: " + color) }
         onRejected: { console.log("Rejected") }
-
-
     }
     //! [colordialog]
     Column {
