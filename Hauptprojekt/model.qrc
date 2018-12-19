@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/test.obj</file>
+        <file>assets/waterPlane.obj</file>
+    </qresource>
+</RCC>

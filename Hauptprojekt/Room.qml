@@ -15,7 +15,7 @@ Item {
         anchors.top: base.top
         anchors.bottom: base.verticalCenter
 
-        room: base.room
+        //room: base.room
 
     }
 

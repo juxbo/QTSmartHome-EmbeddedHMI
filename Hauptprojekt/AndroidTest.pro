@@ -19,7 +19,10 @@ SOURCES += \
     house.cpp \
     roommodel.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    model.qrc \
+    textures.qrc \
+    shaders.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -37,3 +40,5 @@ HEADERS += \
     light.h \
     house.h \
     roommodel.h
+
+DISTFILES +=

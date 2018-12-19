@@ -3,7 +3,9 @@
 #include <QDebug>
 
 House::House()
-{}
+{
+    addRoom("test");
+}
 
 void House::addRoom(const QString &roomName)
 {

@@ -12,5 +12,7 @@
         <file>HamburgerMenu.qml</file>
         <file>OpenGlEs.qml</file>
         <file>RoomSettings.qml</file>
+        <file>OpenGlEs_copy.qml</file>
+        <file>WaterMaterial.qml</file>
     </qresource>
 </RCC>
