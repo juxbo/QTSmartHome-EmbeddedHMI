@@ -27,24 +27,38 @@ Item {
         id: rectangle
 
         width: parent.width
-        height: name.height > darkModeBtn.height ? name.height : darkModeBtn.height
-        //height: darkModeBtn.height
+        height: name.height + subText.height + 20
 
         border.width: 1
         border.color: "transparent"
         radius: 4
-
-        Text {
-            id: name
-            text: base.room.name
-            font.pixelSize: 16
-
-            anchors.left: parent.left
+        Column {
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: 15
+            Text {
+                id: name
+                text: base.room.name
+                font.pixelSize: 16
+                anchors.left: parent.left
+                anchors.leftMargin: 15
+            }
+            Text {
+                id: subText
+                text: base.room.lightsOn() ? qsTr("Lights are on") : qsTr(
+                                                 "All lights off")
+                color: "gray"
+                font.pixelSize: 14
+
+                anchors.left: parent.left
+                anchors.leftMargin: 15
+            }
         }
         OnOffToggleButton {
-            id: darkModeBtn
+            id: toggleBtn
+            onToggledSwitch: {
+                console.log("State: " + base.room.lightsOn())
+                base.room.toggleAllLights()
+                console.log("Toggled all lights of room: " + base.room.name + ", new state: " + base.room.lightsOn())
+            }
         }
     }
     DropShadow {

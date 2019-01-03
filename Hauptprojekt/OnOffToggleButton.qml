@@ -2,10 +2,10 @@ import QtQuick 2.0
 import QtQuick.Controls 2.4
 
 Item {
+    // OUT Signal for whener
+    signal toggledSwitch();
+    // IN Signal to toggle on click
     signal clickToggle();
-
-    //property var value
-    //id: onOffBtn
 
     width: parent.width / 4
     height: switchi.height
@@ -25,20 +25,6 @@ Item {
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
         anchors.rightMargin: 5
+        onToggled: toggledSwitch()
     }
-    // XXX: The already existing SWITCH functionality seems superior and easier to use
-    //        Slider {
-    //            id: slider
-
-    //            from: 0
-    //            to: 1
-    //            // TODO: Signals
-    //            //value: onOffBtn.value
-    //            stepSize: 1
-    //            width: parent.width
-
-    //            anchors.right: parent.right
-    //            anchors.verticalCenter: parent.verticalCenter
-    //            anchors.rightMargin: 5
-    //        }
 }
