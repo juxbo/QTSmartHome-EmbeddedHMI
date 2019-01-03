@@ -65,7 +65,6 @@ Drawer {
             currentIndex: 0
             model: ["English", "Deutsch"]
             width: parent.width
-            background: parent.background
             onCurrentIndexChanged: console.log("Changed lang")
             contentItem: Text {
                 text: langCB.displayText

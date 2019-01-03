@@ -21,6 +21,7 @@ public:
 
     Q_INVOKABLE void addLight();
     Q_INVOKABLE bool lightsOn();
+    Q_INVOKABLE void toggleAllLights();
 
 signals:
     void nameChanged();

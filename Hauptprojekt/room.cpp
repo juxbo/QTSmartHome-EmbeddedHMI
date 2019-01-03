@@ -33,6 +33,15 @@ bool Room::lightsOn()
     return false;
 }
 
+void Room::toggleAllLights()
+{
+    const bool stateToSet = !this->lightsOn();
+    for(int i = 0; i < m_lights.size(); ++i) {
+        m_lights.at(i)->setActive(stateToSet);
+        //TODO: This doesn't work we need to set in place
+    }
+}
+
 QString Room::name() const
 {
     return m_name;

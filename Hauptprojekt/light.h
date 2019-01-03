@@ -10,6 +10,8 @@ public:
     Light(QObject *parent);
 
     bool isActive() const;
+    void setActive(bool active);
+    void toggle();
 
 private:
     bool m_isActive;

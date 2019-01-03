@@ -22,8 +22,9 @@ Item {
         anchors.bottom: base.bottom
         anchors.left: base.left
         anchors.right: base.right
+        anchors.topMargin: 4
 
-        spacing: 10
+        spacing: 5
 
         delegate: RoomListEntry {
             room: model.modelData
