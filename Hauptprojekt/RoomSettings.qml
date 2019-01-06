@@ -8,14 +8,14 @@ Item {
     clip: true
 
     //! [colordialog]
-    ColorDialog {
-        id: colorDialog
-        visible: colorDialogVisible.checked
-        title: "Choose a color"
-        color: "green"
-        onAccepted: { console.log("Accepted: " + color) }
-        onRejected: { console.log("Rejected") }
-    }
+//    ColorDialog {
+//        id: colorDialog
+//        visible: colorDialogVisible.checked
+//        title: "Choose a color"
+//        color: "green"
+//        onAccepted: { console.log("Accepted: " + color) }
+//        onRejected: { console.log("Rejected") }
+//    }
     //! [colordialog]
     Column {
         anchors.fill: parent

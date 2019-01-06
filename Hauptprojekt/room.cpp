@@ -12,6 +12,7 @@ Room::Room(const QString &name, QObject *parent)
     , m_name{name}
     , m_lights{}
 {
+    addLight();
 }
 
 Room::~Room()
@@ -26,7 +27,7 @@ void Room::addLight()
 bool Room::lightsOn()
 {
     for(int i = 0; i < m_lights.size(); ++i){
-        if(m_lights.at(i)->isActive()){
+        if(m_lights.at(i)->isActive()) {
             return true;
         }
     }
@@ -35,10 +36,11 @@ bool Room::lightsOn()
 
 void Room::toggleAllLights()
 {
+    qDebug() << "Toggle all lights in room" << m_name;
     const bool stateToSet = !this->lightsOn();
-    for(int i = 0; i < m_lights.size(); ++i) {
-        m_lights.at(i)->setActive(stateToSet);
-        //TODO: This doesn't work we need to set in place
+
+    for (auto light : m_lights) {
+        light->setActive(stateToSet);
     }
 }
 

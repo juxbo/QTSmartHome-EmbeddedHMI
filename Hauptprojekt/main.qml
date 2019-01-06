@@ -7,7 +7,7 @@ Window {
     visible: true
     width: 320
     height: 480
-    title: qsTr("Smart Home App")
+    title: qsTr("Smart Homie")
 
     color: "lightblue"
 
