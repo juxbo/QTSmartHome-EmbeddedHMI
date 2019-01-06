@@ -51,6 +51,24 @@ Drawer {
             border.color: "gray"
         }
         ItemDelegate {
+            text: qsTr("MQTT settings")
+            width: parent.width
+            onClicked: {
+                console.log("Invoking mqtt settings")
+                base.openMqttSettings()
+                drawer.close()
+            }
+        }
+        ItemDelegate {
+            text: qsTr("Test MQTT connection")
+            width: parent.width
+            onClicked: {
+                console.log("Testing mqtt")
+                toast.show(house.testMqtt() ? "Connection is established":"Connection FAILED", 1000)
+                drawer.close()
+            }
+        }
+        ItemDelegate {
             id: darkModeDelegate
             width: parent.width
             text: qsTr("Dark mode")
@@ -66,6 +84,9 @@ Drawer {
             model: ["English", "Deutsch"]
             width: parent.width
             onCurrentIndexChanged: console.log("Changed lang")
+            background: Rectangle {
+                       color : "white"
+                   }
             contentItem: Text {
                 text: langCB.displayText
                 font: darkModeDelegate.font

@@ -43,8 +43,7 @@ Item {
             }
             Text {
                 id: subText
-                text: base.room.lightsOn() ? qsTr("Lights are on") : qsTr(
-                                                 "All lights off")
+                text: base.room.lightsOn() ? qsTr("Lights on") : qsTr("All lights off")
                 color: "gray"
                 font.pixelSize: 14
 
@@ -55,9 +54,10 @@ Item {
         OnOffToggleButton {
             id: toggleBtn
             onToggledSwitch: {
-                console.log("State: " + base.room.lightsOn())
                 base.room.toggleAllLights()
-                console.log("Toggled all lights of room: " + base.room.name + ", new state: " + base.room.lightsOn())
+                console.log("Toggled all lights of room: " + base.room.name
+                            + ", new state: " + base.room.lightsOn())
+                subText.text = base.room.lightsOn() ? qsTr("Lights on") : qsTr("All lights off")
             }
         }
     }

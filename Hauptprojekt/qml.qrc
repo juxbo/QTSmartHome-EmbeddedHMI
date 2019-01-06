@@ -14,5 +14,7 @@
         <file>RoomSettings.qml</file>
         <file>WaterMaterial.qml</file>
         <file>OnOffToggleButton.qml</file>
+        <file>MQTTSettings.qml</file>
+        <file>ToastNotification.qml</file>
     </qresource>
 </RCC>

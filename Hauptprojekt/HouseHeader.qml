@@ -6,6 +6,7 @@ import QtGraphicalEffects 1.0
 Item {
     id: base
     signal newRoom
+    signal openMqttSettings
 
     width: mainWindow.width
     height: rectangle.height
@@ -55,7 +56,7 @@ Item {
 
         Text {
             anchors.centerIn: parent
-            text: qsTr("Welcome to your House")
+            text: qsTr("Your home")
             font.pixelSize: 18
         }
 
