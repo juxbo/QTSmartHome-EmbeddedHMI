@@ -2,13 +2,19 @@ import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.11
 
+import RoomClass 1.0
+import LightClass 1.0
+
 Drawer {
+    property RoomClass room;
+
+    signal selectLight(LightClass light);
+
     id: drawer
     width: mainWindow.width * 0.66
     height: mainWindow.height
 
     Column {
-        id: addRoom
         anchors.fill: parent
 
         Label {
@@ -27,17 +33,17 @@ Drawer {
         }
         //TODO: Create an own component for this?
         ItemDelegate {
-            text: qsTr("Add Room")
+            text: qsTr("Add Light")
             width: parent.width
             onClicked: {
-                console.log("Add room")
-                base.newRoom()
+                console.log("Add Light")
+                drawer.room.addLight()
                 drawer.close()
             }
         }
         Label {
             anchors.topMargin: 50
-            text: qsTr("Settings")
+            text: qsTr("Lights")
             font.pixelSize: 16
             padding: 10
             topPadding: 25
@@ -50,28 +56,14 @@ Drawer {
             anchors.margins: 20
             border.color: "gray"
         }
-        ItemDelegate {
-            id: darkModeDelegate
-            width: parent.width
-            text: qsTr("Dark mode")
-            // Send clicked event to the toggle button
-            onClicked: darkModeBtn.clickToggle()
-            OnOffToggleButton {
-                id: darkModeBtn
-            }
-        }
-        ComboBox {
-            id: langCB
-            currentIndex: 0
-            model: ["English", "Deutsch"]
-            width: parent.width
-            onCurrentIndexChanged: console.log("Changed lang")
-            contentItem: Text {
-                text: langCB.displayText
-                font: darkModeDelegate.font
-                padding: darkModeDelegate.padding
-                // TODO: Get the color of the darkModeDelegate text instead
-                color: "#393939"
+        Repeater {
+            model: drawer.room.modelLights
+            ItemDelegate {
+                text: model.modelData.name
+                width: parent.width
+                onClicked: {
+                    selectLight(model.modelData)
+                }
             }
         }
     }

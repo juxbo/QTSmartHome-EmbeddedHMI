@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
     setSurfaceFormat();
 
     qmlRegisterType<Room>("RoomClass", 1, 0, "RoomClass");
+    qmlRegisterType<Light>("LightClass", 1, 0, "LightClass");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("house", &house);

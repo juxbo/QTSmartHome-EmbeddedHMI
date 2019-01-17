@@ -39,4 +39,3 @@ HEADERS += \
     house.h
 
 DISTFILES += \
-    lightfrag.frag

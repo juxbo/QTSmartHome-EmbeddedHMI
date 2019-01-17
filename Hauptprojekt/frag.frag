@@ -1,6 +1,5 @@
 #define FP highp
 
-uniform FP vec3 maincolor;
 uniform FP sampler2D texture;
 
 const int MAX_LIGHTS = 8;
@@ -14,8 +13,8 @@ struct Light {
     FP float cutOffAngle;
 };
 
-uniform FP Light lights[MAX_LIGHTS];
-uniform FP int lightCount;
+uniform Light lights[MAX_LIGHTS];
+uniform int lightCount;
 
 varying FP vec2 texCoord;
 varying FP vec4 coord;

@@ -13,7 +13,7 @@ struct Light {
     FP float cutOffAngle;
 };
 
-uniform FP Light lights[MAX_LIGHTS];
+uniform Light lights[MAX_LIGHTS];
 uniform FP int lightCount;
 
 varying FP vec4 coord;

@@ -1,10 +1,13 @@
 import QtQuick 2.0
 import RoomClass 1.0
+import LightClass 1.0
 
 Item {
     id: base
 
     property RoomClass room
+
+    property LightClass light
 
     signal roomBack()
     anchors.fill: parent;
@@ -12,8 +15,10 @@ Item {
 
     OpenGlEs {
         id: opengles
-        anchors.top: base.top
-        anchors.bottom: base.verticalCenter
+        room: base.room;
+
+        anchors.bottomMargin: parent.height / 2;
+        anchors.topMargin: 50;
 
     }
 
@@ -22,11 +27,18 @@ Item {
         onBack: roomBack()
 
         anchors.top: base.top
+
+        onLightSelected: {
+            roomsettings.light = light;
+            console.log("test")
+        }
     }
 
-   /* RoomSettings {
+    RoomSettings {
+        id: roomsettings
         anchors.top: base.verticalCenter
         anchors.bottom: base.bottom
         width: base.width
-    }*/
+
+    }
 }

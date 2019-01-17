@@ -48,7 +48,7 @@ Entity {
 
     SphereMesh {
         id: sphereMesh
-        radius: 0.1
+        radius: 0.05
         rings: 100
         slices: 100
     }

@@ -17,5 +17,6 @@
         <file>RoomModel.qml</file>
         <file>PlateModel.qml</file>
         <file>LightModel.qml</file>
+        <file>LightList.qml</file>
     </qresource>
 </RCC>
