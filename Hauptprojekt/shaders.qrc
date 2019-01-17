@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>frag.frag</file>
         <file>vert.vert</file>
+        <file>lightfrag.frag</file>
     </qresource>
 </RCC>

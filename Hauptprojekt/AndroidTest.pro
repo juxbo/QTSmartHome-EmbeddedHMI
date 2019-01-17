@@ -1,4 +1,4 @@
-QT += quick 3drender
+QT += quick 3drender 3dextras
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -19,7 +19,6 @@ SOURCES += \
     house.cpp
 
 RESOURCES += qml.qrc \
-    model.qrc \
     textures.qrc \
     shaders.qrc
 
@@ -39,4 +38,5 @@ HEADERS += \
     light.h \
     house.h
 
-DISTFILES +=
+DISTFILES += \
+    lightfrag.frag

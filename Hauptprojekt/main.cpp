@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QOpenGLContext>
+#include <QDebug>
 
 #include "house.h"
 
@@ -12,7 +13,7 @@ void setSurfaceFormat()
     format.setRenderableType(QSurfaceFormat::OpenGLES);
 #else
     if (QOpenGLContext::openGLModuleType() == QOpenGLContext::LibGL) {
-        format.setVersion(4, 3);
+        format.setVersion(2, 0);
         format.setProfile(QSurfaceFormat::CoreProfile);
     }
 #endif

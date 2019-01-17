@@ -1,7 +1,6 @@
 #define FP highp
 
 uniform FP vec3 maincolor;
-uniform FP sampler2D texture;
 
 const int MAX_LIGHTS = 8;
 struct Light {
@@ -17,19 +16,16 @@ struct Light {
 uniform FP Light lights[MAX_LIGHTS];
 uniform FP int lightCount;
 
-varying FP vec2 texCoord;
 varying FP vec4 coord;
 
 void main()
 {
-    FP vec4 textureColor = texture2D(texture, texCoord);
-
     FP float r = 0.0;
     FP float g = 0.0;
     FP float b = 0.0;
 
     for(int i = 0; i < lightCount; ++i){
-        FP vec3 distVec = lights[i].position - coord.xyz;
+        FP vec3 distVec = lights[i].position.xyz - coord.xyz;
         FP float dist = sqrt(pow(distVec.x, 2.0) + pow(distVec.y, 2.0) + pow(distVec.z, 2.0));
         dist /= 2.0;
         if(dist > 1.0){
@@ -41,7 +37,8 @@ void main()
         b += lights[i].color.b * multi;
     }
 
-    FP vec3 tmp = textureColor.rgb + vec3(r,g,b);
+    FP vec3 tmp = maincolor + vec3(r,g,b);
+
     FP float max_value = max(tmp.r, tmp.g);
     max_value = max(max_value, tmp.b);
     if(max_value > 1.0){
@@ -58,7 +55,7 @@ void main()
         tmp.b -= anteil;
     }
 
-    gl_FragColor = vec4(tmp, textureColor.a);
+    gl_FragColor = vec4(tmp, 1.0);
 }
 
 
