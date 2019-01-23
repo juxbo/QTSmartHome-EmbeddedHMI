@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QVector>
-#include <QMqttClient>
+//#include <QMqttClient>
 #include <qabstractitemmodel.h>
 
 #include "room.h"
@@ -41,7 +41,7 @@ private:
     QVector<Room *> m_rooms;
     QList<QObject *> m_modelRooms;
 
-    QMqttClient *m_client;
+    //QMqttClient *m_client;
     quint16 m_client_port = quint16(1883);
     QString m_client_host = QString("localhost");
 };
