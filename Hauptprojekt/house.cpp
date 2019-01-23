@@ -9,11 +9,22 @@ House::House()
 
 void House::addRoom(const QString &roomName)
 {
-    m_rooms.push_back(new Room{roomName, this});
+    QStringList out;
+    out= rooms();
+    bool isOkay= out.contains(roomName);
+    bool isempty = roomName.isEmpty();
+    if (isOkay == false && isempty== false)
+        {
+        m_rooms.push_back(new Room{roomName, this});
 
-    m_modelRooms.push_back(m_rooms.at(m_rooms.size() -1));
+            m_modelRooms.push_back(m_rooms.at(m_rooms.size() -1));
 
-    emit roomsChanged();
+            emit roomsChanged();
+        }
+    else{
+
+    }
+   
 }
 
 QStringList House::rooms() const
@@ -30,3 +41,5 @@ QList<QObject *> House::modelRooms() const
     return m_modelRooms;
 }
 
+
+        
