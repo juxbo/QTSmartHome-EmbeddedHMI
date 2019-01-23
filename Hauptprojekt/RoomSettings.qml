@@ -2,20 +2,24 @@ import QtQuick 2.0
 import QtQuick.Controls 2.4
 import QtQuick.Dialogs 1.1
 import RoomClass 1.0;
-
+import LightClass 1.0
 Item {
+    id: base
+
     SystemPalette { id: palette }
     clip: true
 
+    property LightClass light
+
     //! [colordialog]
-//    ColorDialog {
-//        id: colorDialog
-//        visible: colorDialogVisible.checked
-//        title: "Choose a color"
-//        color: "green"
-//        onAccepted: { console.log("Accepted: " + color) }
-//        onRejected: { console.log("Rejected") }
-//    }
+    ColorDialog {
+        id: colorDialog
+        visible: false
+        title: "Choose a color"
+        color: "green"
+        onAccepted: { base.light.color = color }
+        onRejected: { console.log("Rejected") }
+    }
     //! [colordialog]
     Column {
         anchors.fill: parent
@@ -25,7 +29,7 @@ Item {
 
         Button {
             id: button_on
-            text: qsTr("An/Off")
+            text: qsTr("On/Off")
             anchors.left: parent.left
             anchors.right:parent.right
             width: parent.width

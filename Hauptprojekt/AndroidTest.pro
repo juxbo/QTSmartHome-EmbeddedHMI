@@ -1,4 +1,4 @@
-QT += quick 3drender
+QT += quick 3drender 3dextras
 QT += mqtt
 CONFIG += c++11
 
@@ -20,7 +20,6 @@ SOURCES += \
     house.cpp
 
 RESOURCES += qml.qrc \
-    model.qrc \
     textures.qrc \
     shaders.qrc
 
@@ -40,4 +39,4 @@ HEADERS += \
     light.h \
     house.h
 
-DISTFILES +=
+DISTFILES += \

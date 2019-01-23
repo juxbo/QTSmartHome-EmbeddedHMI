@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QOpenGLContext>
+#include <QDebug>
 
 #include "house.h"
 
@@ -12,7 +13,7 @@ void setSurfaceFormat()
     format.setRenderableType(QSurfaceFormat::OpenGLES);
 #else
     if (QOpenGLContext::openGLModuleType() == QOpenGLContext::LibGL) {
-        format.setVersion(4, 3);
+        format.setVersion(2, 0);
         format.setProfile(QSurfaceFormat::CoreProfile);
     }
 #endif
@@ -32,6 +33,7 @@ int main(int argc, char *argv[])
     setSurfaceFormat();
 
     qmlRegisterType<Room>("RoomClass", 1, 0, "RoomClass");
+    qmlRegisterType<Light>("LightClass", 1, 0, "LightClass");
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("house", &house);

@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>assets/foam.jpg</file>
+        <file>assets/boden.jpg</file>
+        <file>assets/wand.jpg</file>
     </qresource>
 </RCC>

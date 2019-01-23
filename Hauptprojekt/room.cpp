@@ -2,6 +2,7 @@
 
 #include <QDebug>
 
+
 Room::Room()
 {
 
@@ -11,6 +12,7 @@ Room::Room(const QString &name, QObject *parent)
     : QObject{parent}
     , m_name{name}
     , m_lights{}
+    , m_modelLights{}
 {
     addLight();
 }
@@ -20,8 +22,13 @@ Room::~Room()
 
 void Room::addLight()
 {
-    qDebug() << "New Light";
-    m_lights.push_back(new Light{this});
+    if(m_lights.size() < 7){
+        Light* tmp = new Light{this};
+        m_lights.push_back(tmp);
+        m_modelLights.push_back(tmp);
+
+        lightsChanged();
+    }
 }
 
 bool Room::lightsOn()
@@ -32,6 +39,11 @@ bool Room::lightsOn()
         }
     }
     return false;
+}
+
+QList<QObject *> Room::modelLights() const
+{
+    return m_modelLights;
 }
 
 void Room::toggleAllLights()
