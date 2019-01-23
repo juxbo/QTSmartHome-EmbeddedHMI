@@ -1,5 +1,5 @@
 QT += quick 3drender 3dextras
-QT += mqtt
+# QT += mqtt
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
