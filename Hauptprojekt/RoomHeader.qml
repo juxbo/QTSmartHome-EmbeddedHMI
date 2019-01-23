@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.4
+import QtGraphicalEffects 1.0
 
 import RoomClass 1.0
 import LightClass 1.0
@@ -50,7 +51,7 @@ Item {
         RoundButton{
             id: backButton
 
-            text: "🡐"
+            text: "\u2190"
             font.pixelSize: 22
             background: Rectangle {
                 color: "transparent"
@@ -68,6 +69,17 @@ Item {
         Text{
             anchors.centerIn: parent;
             text: base.room ? base.room.name : qsTr("Placeholder")
+            font.pixelSize: 18
         }
+    }
+
+    DropShadow {
+        anchors.fill: rectangle
+        horizontalOffset: 0
+        verticalOffset: 2
+        radius: 5.0
+        samples: 17
+        color: "#80000000"
+        source: rectangle
     }
 }

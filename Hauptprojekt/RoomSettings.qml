@@ -24,8 +24,7 @@ Item {
     Column {
         anchors.fill: parent
         anchors.margins: 30
-        spacing: 30
-
+        spacing: 10
 
         Button {
             id: button_on
@@ -34,6 +33,12 @@ Item {
             anchors.right:parent.right
             width: parent.width
             anchors.topMargin: 20
+        }
+        Slider {
+            onMoved: light.position.x = this.value
+        }
+        Slider {
+            onMoved: light.position.y = this.value
         }
 
     }
@@ -47,6 +52,7 @@ Item {
         height: buttonRow.height * 1.2
         color: Qt.darker(palette.window, 1.1)
         border.color: Qt.darker(palette.window, 1.3)
+
         Row {
             id: buttonRow
             spacing: 6
