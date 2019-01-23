@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.4
+import QtGraphicalEffects 1.0
 
 Item {
     id: base;
@@ -10,20 +11,32 @@ Item {
 
     signal createNewRoom(string roomName)
 
+    Rectangle {
+        height: mainWindow.height
+        width: mainWindow.width
+
+        color: "gray"
+        opacity: 0.5
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {} // Do nothing on click outside of popup
+        }
+    }
+
     Rectangle{
         id: rectangle
 
-        height: mainWindow.height / 3
-        width: mainWindow.width / 1.5
+        height: mainWindow.height / 2.3
+        width: mainWindow.width / 1.2
 
         anchors.centerIn: parent;
-
-        border.color: "black"
-        border.width: 2
-
         color: "white"
 
-        radius: 20
+        border.width: 1
+        border.color: "transparent"
+
+        radius: 4
 
         Column{
             anchors.centerIn: parent
@@ -71,5 +84,16 @@ Item {
             }
         }
     }
+
+    DropShadow {
+        anchors.fill: rectangle
+        horizontalOffset: 1
+        verticalOffset: 1
+        radius: 3.0
+        samples: 17
+        color: "#80000000"
+        source: rectangle
+    }
+
     onVisibleChanged: visible ? inputField.focus = true : inputField.text = ""
 }
