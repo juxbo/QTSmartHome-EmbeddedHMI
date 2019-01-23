@@ -13,6 +13,7 @@ Drawer {
     id: drawer
     width: mainWindow.width * 0.66
     height: mainWindow.height
+    edge: Qt.RightEdge
 
     Column {
         anchors.fill: parent

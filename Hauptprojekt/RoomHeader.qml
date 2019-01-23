@@ -50,8 +50,11 @@ Item {
         RoundButton{
             id: backButton
 
-            text: "<-"
+            text: "🡐"
             font.pixelSize: 22
+            background: Rectangle {
+                color: "transparent"
+            }
 
             anchors.topMargin: 5
             anchors.bottomMargin: 5
